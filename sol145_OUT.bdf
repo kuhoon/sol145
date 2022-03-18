@@ -1,0 +1,6 @@
+$pyNastran: version=msc
+$pyNastran: punch=True
+$pyNastran: encoding=utf-8
+$pyNastran: nnodes=0
+$pyNastran: nelements=0
+ENDDATA
