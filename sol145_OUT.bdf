@@ -1,8 +1,11 @@
 $pyNastran: version=msc
-$pyNastran: punch=True
+$pyNastran: punch=False
 $pyNastran: encoding=utf-8
 $pyNastran: nnodes=0
 $pyNastran: nelements=0
+$EXECUTIVE CONTROL DECK
+SOL 145
+CEND
 $POINTS
 POINT        101              0.      0.      0.
 POINT        102           2360.      0.      0.
@@ -22,4 +25,5 @@ CAERO1    102001  102001              33       5                       1
 PAERO1    100001
 PAERO1    101001
 PAERO1    102001
+SPLINE4        1  102001       1               1             FPS
 ENDDATA
