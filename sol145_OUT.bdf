@@ -3,4 +3,23 @@ $pyNastran: punch=True
 $pyNastran: encoding=utf-8
 $pyNastran: nnodes=0
 $pyNastran: nelements=0
+$POINTS
+POINT        101              0.      0.      0.
+POINT        102           2360.      0.      0.
+POINT        103              0.   832.9      0.
+POINT        104           2360.   832.9      0.
+POINT        105            79.8  3117.1      0.
+POINT        106          2345.8  3117.1      0.
+POINT        107           631.5   8587.      0.
+POINT        108          1601.5   8587.      0.
+$AERO
+CAERO1    100001  100001               5       5                       1
+              0.      0.      0.   2360.      0.   832.9      0.   2360.
+CAERO1    101001  101001              14       5                       1
+              0.   832.9      0.   2360.    79.8  3117.1      0.   2266.
+CAERO1    102001  102001              33       5                       1
+            79.8  3117.1      0.   2266.   631.5   8587.      0.    970.
+PAERO1    100001
+PAERO1    101001
+PAERO1    102001
 ENDDATA
