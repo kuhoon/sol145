@@ -5,6 +5,8 @@ import os
 # from IPython.display import HTML as html_print
 from pyNastran.bdf.bdf import BDF, CaseControlDeck
 from pyNastran.bdf.cards.aero.aero import SPLINE4
+from pyNastran.bdf.cards.aero.dynamic_loads import AERO
+from pyNastran.bdf.cards.aero.static_loads import AEROS
 from pyNastran.bdf.cards.aero.dynamic_loads import MKAERO2
 
 model = BDF()
@@ -50,13 +52,28 @@ for i in range(len(idSectList)-1): #leg, list = 길이, 원소의 갯수
 #여기서 하고싶은것. 섹션 아이디는 n개이고, 여기서 생성되는 면은 n-1개이므로 섹션아이디-1 = n-1개로 표현
 #ptList는 [ [], [], [] ]형태이므로, float 불가. cList는 리스트-플롯 바로적용
 
-# model.add_card([1], 'MKAERO2', '')
+
 spline = SPLINE4(1, 102001, 1, 1, '', 'FPS', 'BOTH', 10, 10)
 spline.validate()
 spline.write_card(size=8, is_double=False)
-spline.raw_fields()
-model.splines[1] = spline
+# spline.raw_fields()
+# model.splines[1] = spline
 
+aero = AERO(0, 1, 1984, 1.228E-12)
+aero.validate()
+aero.raw_fields()
+aero.write_card(size=8, is_double=False)
+# model.aero[1]=aero
+
+aeros = AEROS(0, 0, 1984, 17174, 3.22E7/2)
+aeros.validate()
+aeros.write_card(size=8, is_double=False)
+aero.raw_fields()
+# model.aeros[1]=aeros
+
+
+# model.add_aero(1, 1984, 1.225E-12) #mean aerodynamic chord, air density
+# model.add_aeros(1984, 17174, 32200000)
 
 model.sol = 145
 
