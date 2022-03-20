@@ -65,6 +65,7 @@ aero.raw_fields()
 aero.write_card(size=8, is_double=False)
 # model.aero[1]=aero
 
+
 aeros = AEROS(0, 0, 1984, 17174, 3.22E7/2)
 aeros.validate()
 aeros.write_card(size=8, is_double=False)
